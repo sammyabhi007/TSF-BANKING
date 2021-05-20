@@ -1,0 +1,292 @@
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+a{
+    text-decoration: none;
+}
+.container{
+    color: whitesmoke;
+    width: 100vw;
+    height:100vh;
+    display: flex;
+    flex-direction: row;
+}
+.container .left_container{
+    width:40%;
+    height:100%;
+    background-color: rgb(4, 24, 46);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat';
+    font-size: 20px;
+}
+.container .left_container #head{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.container .left_container #head img{
+    height:100px;
+    width:100px;
+    transition: transform 0.8s;
+}
+.container .left_container #head img:hover{
+    transform: rotateX(360deg);
+}
+.container .left_container #head #title{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 20px;
+}
+.container .left_container #head #title #titleText1{
+    font-size: 1.7rem;
+    font-weight: 400;
+}
+.container .left_container #head #title #titleText2{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.container .left_container #footer{
+    background-color: rgb(247, 50, 16);
+    position: absolute;
+    bottom: 0px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    width: 40%;
+    padding: 20px 0;
+    text-align: center;
+}
+.container .left_container #footer img{
+    height: 25px;
+    width: 25px;
+    margin: 5px 5px 0;
+    transition: transform 0.4s;
+}
+.container .left_container #footer img:hover{
+    transform: scale(1.2);
+}
+.container .right_container{
+    width:60%;
+    height:100%;  
+    overflow-y: scroll;  
+    scroll-behavior: smooth;
+    background-image: url('images/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.container .right_container #location{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px 0 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    color:whitesmoke;
+    background-color: rgb(0,0,0);
+}
+.container .right_container #location img{
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+}
+.container .right_container #menu{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+.container .right_container #menu img{
+    height: 25px;
+    width: 25px;
+    margin-right: 8px;
+}
+.container .right_container .menu_button{
+    width: 40%;
+    border:0;
+    border-radius: 5px;
+    cursor: pointer;
+    padding:15px 20px;
+    margin: 20px auto;
+    color: whitesmoke;
+    font-family: 'Montserrat';
+    font-size: 1.5rem;
+    font-weight: 500;
+    background-color: rgb(252, 42, 5);
+    transition: transform 0.5s;
+}
+.container .right_container .menu_button:hover{
+    transform: scale(1.05);
+}
+.container #customers, .container #transfers{
+    display: none;
+    margin-bottom: 20px;
+}
+.container #customers #customers_table, .container #transfers #transfer_table{
+    background-color: rgba(252, 247, 247, 0.7);
+    width:90%;
+    height:auto;
+    margin:50px auto 0;
+    box-shadow: 0 0 10px 3px rgba(0,0,0,0.8);
+    padding: 10px 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+.container #customers #customers_table #back td, .container #transfers #transfer_table #back td{
+    text-align: left;
+    border-bottom: 0px;
+}
+.container #customers #customers_table #back td button, .container #transfers #transfer_table #back td button{
+    font-size: 1.1rem;
+    font-family: 'Montserrat';
+    color:whitesmoke;
+    font-weight: 600;
+    border:0px;
+    background-color: rgb(233, 63, 33);
+    border-radius: 50%;
+    padding: 5px 10px;
+    cursor: pointer;
+    box-shadow: -2px 0px 10px rgba(0,0,0,0.5);
+    transition: transform 0.2s;
+}
+.container #customers #customers_table #TableTitle td, .container #transfers #transfer_table #TableTitle td{
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color:rgb(39, 38, 38);
+    padding-bottom:10px;
+    border-bottom: 1px solid rgb(167, 163, 163);
+    font-family: 'Montserrat';
+}
+.container #customers #customers_table .customer_rows, .container #transfers #transfer_table .customer_rows{
+    background-color: rgb(247, 240, 240);
+    transition: transform 0.3s;
+    cursor: pointer;
+    color:rgb(37, 36, 36);
+}
+.container #customers #customers_table .customer_rows:hover, .container #customers #CustomerCard #transaction:hover, .container #transfers #transfer_table .customer_rows:hover{
+    transform: scaleX(1.02);
+}
+.container #customers #customers_table th, .container #transfers #transfer_table th{
+    background-color: rgb(233, 63, 33);
+    border-radius: 3px;
+    cursor:default;
+}
+.container #transfers #transfer_table .rec{
+    background-color: rgb(71, 170, 26);
+}
+.container #customers #customers_table th, .container #transfers #transfer_table th, .container #customers #customers_table .customer_rows .customer_cells, .container #transfers #transfer_table .customer_rows .customer_cells{
+    padding: 5px 12px;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1 rem;
+}
+.container #customers #CustomerCard{
+    height:auto;
+    width:60%;
+    margin:40px auto 0px;
+    box-shadow: 0 0 10px 3px rgba(0,0,0,0.8);
+    display:none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20px 40px;
+    color:rgb(31, 29, 29);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    background-color: rgba(245, 245, 245, 0.7);
+    border-radius: 5px;
+}
+.container #customers #CustomerCard hr{
+    width: 80%;
+    margin: 8px auto;
+}
+.container #customers #CustomerCard #Card_title{
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgb(31, 29, 29);
+    margin:0 auto 10px;
+}
+.container #customers #CustomerCard div{
+    width:100%;
+}
+.container #customers #CustomerCard div .Card_content{
+    float:right;
+}
+.container #customers #CustomerCard form div span{
+    font-family: 'Montserrat';
+    font-size: 1rem;
+    font-weight: 600;
+    color:rgb(31, 29, 29);
+    margin-bottom: 5px;
+}
+.container #customers #CustomerCard #send{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.container #customers #CustomerCard #send select{
+    border: 0;
+    padding:3px 10px;
+    background-color:rgba(245, 245, 245,0.8);
+}
+.container #customers #CustomerCard #send select:focus{
+    box-shadow: 0 0 5px 3px rgba(80, 241, 5, 0.5);
+}
+.container #customers #CustomerCard #send select>option{
+    border: 0;
+    padding:3px 10px;
+    background-color: rgba(245, 245, 245,0.8);
+}
+.container #customers #CustomerCard #send select>option:hover{
+    background-color: rgb(209, 203, 203);
+}
+.container #customers #CustomerCard #send #sendTo{
+    padding: 8px 10px;
+    width:50%;
+    font-size: 1rem;
+    display: block;
+    margin: 0 auto;
+    border:0;
+}
+.container #customers #CustomerCard #Amount{
+    margin:5px auto;
+}
+.container #customers #CustomerCard #send input{
+    padding: 8px 15px;
+    width:40%;
+    font-size: 1.1rem;
+    display: block;
+    margin: 0 auto;
+    border:0;
+}
+.container #customers #CustomerCard #send input:focus{
+    border:0;
+    outline: 0;
+    box-shadow: 0 0 5px 5px rgba(80, 241, 5, 0.5);
+}
+.container #customers #CustomerCard #transaction{
+    display: block;
+    font-family: 'Montserrat';
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 8px 15px;
+    margin: 5px auto 0;
+    border:0;
+    border-radius: 5px;
+    background-color: rgb(46, 207, 31);
+    color: whitesmoke;
+    cursor: pointer;
+}
